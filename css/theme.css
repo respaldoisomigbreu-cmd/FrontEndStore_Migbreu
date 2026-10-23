@@ -1,0 +1,131 @@
+/* Tema de FrontEnd Store.
+   Cambia solo la PALETA BASE para renovar todos los colores del sitio.
+   Los tokens semanticos se calculan a partir de esos valores. */
+
+:root{
+    /* ===== PALETA BASE (editar aqui) ===== */
+    --color-primario: #1976D2;
+    --color-primario-oscuro: #0D47A1;
+    --color-acento: #2ed2e4;
+    --color-acento-oscuro: #00B8D4;
+    --color-blanco: #ffffff;
+    --color-negro: #000000;
+    --color-texto-oscuro: #0b2b4a;
+    --color-peligro: #c62828;
+    --color-peligro-oscuro: #a01f1f;
+    --color-exito: #7ef2b0;
+
+    /* ===== MUESTRAS DEL SELECTOR DE PALETA ===== */
+    --muestra-hombre-fondo: #1976D2;
+    --muestra-hombre-superficie: #0D47A1;
+    --muestra-hombre-acento: #2ed2e4;
+    --muestra-mujer-fondo: #F8E8F0;
+    --muestra-mujer-superficie: #EAD6EA;
+    --muestra-mujer-acento: #A84F7B;
+
+    /* ===== FONDOS ===== */
+    --fondo-pagina: var(--color-primario);
+    --fondo-superficie: var(--color-primario-oscuro);
+    --fondo-contraste: var(--color-blanco);
+    --fondo-control: rgba(255, 255, 255, .08);
+    --fondo-control: color-mix(in srgb, var(--color-blanco) 8%, transparent);
+    --fondo-modal: rgba(0, 0, 0, .65);
+    --fondo-modal: color-mix(in srgb, var(--color-negro) 65%, transparent);
+
+    /* ===== TEXTOS ===== */
+    --texto-principal: var(--color-blanco);
+    --texto-secundario: #d7e9fa;
+    --texto-secundario: color-mix(in srgb, var(--color-blanco) 85%, var(--color-primario));
+    --texto-tenue: #cfe3f7;
+    --texto-tenue: color-mix(in srgb, var(--color-blanco) 78%, var(--color-primario));
+    --texto-placeholder: #b8cfe4;
+    --texto-placeholder: color-mix(in srgb, var(--color-blanco) 68%, var(--color-primario));
+    --texto-oscuro: var(--color-texto-oscuro);
+    --texto-sobre-acento: var(--color-negro);
+    --texto-sobre-peligro: var(--color-blanco);
+    --texto-error: #ffb4b4;
+    --texto-error: color-mix(in srgb, var(--color-peligro) 35%, var(--color-blanco));
+    --texto-exito: var(--color-exito);
+
+    /* ===== ACENTO Y ESTADOS ===== */
+    --acento: var(--color-acento);
+    --acento-hover: var(--color-acento-oscuro);
+    --acento-suave: rgba(46, 210, 228, .16);
+    --acento-suave: color-mix(in srgb, var(--color-acento) 16%, transparent);
+    --peligro: var(--color-peligro);
+    --peligro-hover: var(--color-peligro-oscuro);
+
+    /* ===== BORDES E INTERACCION ===== */
+    --interaccion: rgba(255, 255, 255, .14);
+    --interaccion: color-mix(in srgb, var(--color-blanco) 14%, transparent);
+    --borde: rgba(255, 255, 255, .25);
+    --borde: color-mix(in srgb, var(--color-blanco) 25%, transparent);
+    --borde-fuerte: rgba(255, 255, 255, .4);
+    --borde-fuerte: color-mix(in srgb, var(--color-blanco) 40%, transparent);
+    --borde-sutil: rgba(255, 255, 255, .18);
+    --borde-sutil: color-mix(in srgb, var(--color-blanco) 18%, transparent);
+    --borde-tabla: rgba(255, 255, 255, .12);
+    --borde-tabla: color-mix(in srgb, var(--color-blanco) 12%, transparent);
+    --borde-estado: rgba(255, 255, 255, .3);
+    --borde-estado: color-mix(in srgb, var(--color-blanco) 30%, transparent);
+
+    /* ===== SOMBRAS ===== */
+    --sombra-suave: 0 1.5rem 4rem rgba(0, 0, 0, .3);
+    --sombra-suave: 0 1.5rem 4rem color-mix(in srgb, var(--color-negro) 30%, transparent);
+    --sombra-media: 0 1rem 2.5rem rgba(0, 0, 0, .3);
+    --sombra-media: 0 1rem 2.5rem color-mix(in srgb, var(--color-negro) 30%, transparent);
+}
+
+/* ===== PALETA PASTEL: ROSA Y LAVANDA ===== */
+html[data-paleta="mujer"]{
+    --color-primario: #F8E8F0;
+    --color-primario-oscuro: #EAD6EA;
+    --color-acento: #A84F7B;
+    --color-acento-oscuro: #8B3F66;
+    --color-blanco: #FFFDFE;
+    --color-negro: #3B2430;
+    --color-texto-oscuro: #4A2E3E;
+    --color-peligro: #B23A5A;
+    --color-peligro-oscuro: #922C47;
+    --color-exito: #2F7D5A;
+
+    --fondo-pagina: var(--color-primario);
+    --fondo-superficie: var(--color-primario-oscuro);
+    --fondo-contraste: var(--color-blanco);
+    --fondo-control: color-mix(in srgb, var(--color-negro) 6%, transparent);
+    --fondo-modal: color-mix(in srgb, var(--color-negro) 65%, transparent);
+
+    --texto-principal: var(--color-texto-oscuro);
+    --texto-secundario: color-mix(in srgb, var(--color-texto-oscuro) 82%, var(--color-primario));
+    --texto-tenue: color-mix(in srgb, var(--color-texto-oscuro) 72%, var(--color-primario));
+    --texto-placeholder: color-mix(in srgb, var(--color-texto-oscuro) 58%, var(--color-primario));
+    --texto-oscuro: var(--color-texto-oscuro);
+    --texto-sobre-acento: var(--color-blanco);
+    --texto-sobre-peligro: var(--color-blanco);
+    --texto-error: color-mix(in srgb, var(--color-peligro) 75%, var(--color-negro));
+    --texto-exito: color-mix(in srgb, var(--color-exito) 85%, var(--color-negro));
+
+    --acento: var(--color-acento);
+    --acento-hover: var(--color-acento-oscuro);
+    --acento-suave: color-mix(in srgb, var(--color-acento) 14%, transparent);
+    --peligro: var(--color-peligro);
+    --peligro-hover: var(--color-peligro-oscuro);
+
+    --interaccion: color-mix(in srgb, var(--color-negro) 8%, transparent);
+    --borde: color-mix(in srgb, var(--color-texto-oscuro) 20%, transparent);
+    --borde-fuerte: color-mix(in srgb, var(--color-texto-oscuro) 35%, transparent);
+    --borde-sutil: color-mix(in srgb, var(--color-texto-oscuro) 14%, transparent);
+    --borde-tabla: color-mix(in srgb, var(--color-texto-oscuro) 10%, transparent);
+    --borde-estado: color-mix(in srgb, var(--color-texto-oscuro) 24%, transparent);
+
+    --sombra-suave: 0 1.5rem 4rem color-mix(in srgb, var(--color-negro) 16%, transparent);
+    --sombra-media: 0 1rem 2.5rem color-mix(in srgb, var(--color-negro) 16%, transparent);
+}
+
+html[data-paleta="mujer"] .header__logo{
+    filter: drop-shadow(0 .2rem .5rem color-mix(in srgb, var(--color-negro) 45%, transparent));
+}
+
+html[data-paleta="mujer"] .bloque__imagen{
+    filter: brightness(0) saturate(100%) invert(24%) sepia(31%) saturate(1450%) hue-rotate(295deg) brightness(88%) contrast(92%);
+}

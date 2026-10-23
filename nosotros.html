@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conoce FrontEnd Store: la mejor calidad, el mejor precio y envío gratis en productos para desarrolladores frontend.">
+    <title>FrontEnd Store - Nosotros</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/theme.css">
+    <script src="js/theme.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" aria-label="FrontEnd Store - Ir al inicio">
+            <img class="header__logo" src="img/logo.png" alt="Logotipo de FrontEnd Store">
+        </a>
+    </header>
+
+    <nav class="navegacion" aria-label="Navegación principal">
+        <div class="navegacion__grupo">
+            <a class="navegacion__enlace" href="index.html">Tienda</a>
+            <a class="navegacion__enlace navegacion__enlace--activo" href="nosotros.html" aria-current="page">Nosotros</a>
+        </div>
+        <div class="navegacion__acciones">
+            <a class="navegacion__carrito" href="carrito.html" data-cart-link aria-label="Ver carrito">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span class="navegacion__contador" data-cart-count hidden>0</span>
+            </a>
+            <a class="navegacion__admin" href="login.html" data-auth-link>Admin</a>
+            <button class="navegacion__admin" type="button" data-logout hidden>Salir</button>
+        </div>
+    </nav>
+
+    <main class="contenedor">
+        <h1>Nosotros</h1>
+
+        <div class="nosotros">
+            <div class="nosotros__contenido">
+                <p>
+                    FrontEnd Store nació con una idea sencilla: acercar la tecnología a quienes la usan todos
+                    los días. Somos una tienda especializada en ropa y accesorios inspirados en las herramientas
+                    que hacen posible la web moderna, desde frameworks como React o Vue hasta lenguajes como
+                    JavaScript y TypeScript. Cada diseño está pensado para que puedas mostrar con orgullo las
+                    tecnologías con las que trabajas.
+                </p>
+
+                <p>
+                    Seleccionamos materiales cómodos y duraderos, cuidamos cada detalle de la impresión y
+                    trabajamos con proveedores de confianza. Nuestro objetivo es que recibas un producto de
+                    calidad, a un precio justo y con la rapidez que esperas. Si algo no sale como imaginabas,
+                    nuestro equipo está disponible para ayudarte.
+                </p>
+            </div>
+            <img class="nosotros__imagen" src="img/nosotros.jpg" alt="Equipo de FrontEnd Store">
+        </div>
+    </main>
+
+    <section class="contenedor comprar">
+        <h2 class="comprar__titulo">¿Por qué comprar con nosotros?</h2>
+
+        <div class="bloques">
+            <div class="bloque">
+                <img class="bloque__imagen" src="img/icono_1.png" alt="Icono del mejor precio">
+                <h3 class="bloque__titulo">El Mejor Precio</h3>
+                <p>Precios competitivos sin sacrificar calidad, para que renovar tu guardarropa de
+                desarrollador sea sencillo y accesible.</p>
+            </div>
+            <div class="bloque">
+                <img class="bloque__imagen" src="img/icono_3.png" alt="Icono de envío gratis">
+                <h3 class="bloque__titulo">Envío Gratis</h3>
+                <p>Disfruta de envío sin costo en todos los pedidos dentro del territorio nacional, con
+                seguimiento para que sepas dónde está tu compra.</p>
+            </div>
+            <div class="bloque">
+                <img class="bloque__imagen" src="img/icono_4.png" alt="Icono de la mejor calidad">
+                <h3 class="bloque__titulo">La Mejor Calidad</h3>
+                <p>Materiales suaves y resistentes, con impresiones que conservan su color y forma después de
+                muchos lavados.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p class="footer__texto">Front End Store - Todos Los Derechos Reservados 2025
+        <br> Miguel Abreu
+        </p>
+    </footer>
+
+    <script src="js/productos.js" defer></script>
+    <script src="js/store.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/api.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/cart.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FrontEnd Store: camisetas y productos de las tecnologías frontend más populares como VueJS, React, TypeScript y más.">
+    <title>FrontEnd Store - Tienda</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/theme.css">
+    <script src="js/theme.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" aria-label="FrontEnd Store - Ir al inicio">
+            <img class="header__logo" src="img/logo.png" alt="Logotipo de FrontEnd Store">
+        </a>
+    </header>
+
+    <nav class="navegacion" aria-label="Navegación principal">
+        <div class="navegacion__grupo">
+            <a class="navegacion__enlace navegacion__enlace--activo" href="index.html" aria-current="page">Tienda</a>
+            <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
+        </div>
+        <div class="navegacion__acciones">
+            <a class="navegacion__carrito" href="carrito.html" data-cart-link aria-label="Ver carrito">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span class="navegacion__contador" data-cart-count hidden>0</span>
+            </a>
+            <a class="navegacion__admin" href="login.html" data-auth-link>Admin</a>
+            <button class="navegacion__admin" type="button" data-logout hidden>Salir</button>
+        </div>
+    </nav>
+
+    <main class="contenedor">
+        <h1>Nuestros Productos</h1>
+        <div class="grid" id="catalogo"></div>
+        <noscript>
+            <p class="catalogo__aviso">Activa JavaScript para ver el catálogo actualizado.</p>
+        </noscript>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__texto">Front End Store - Todos Los Derechos Reservados 2025
+        <br> Miguel Abreu
+        </p>
+    </footer>
+
+    <script src="js/productos.js" defer></script>
+    <script src="js/store.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/api.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/catalogo.js" defer></script>
+</body>
+</html>

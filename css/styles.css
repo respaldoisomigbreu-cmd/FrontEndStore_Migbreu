@@ -1,0 +1,380 @@
+:root{
+    --fuentePrincipal: "Staatliches", cursive;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Globales */
+
+body{
+    background-color: var(--fondo-pagina);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+p{
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--texto-principal);
+}
+a{
+    text-decoration: none;
+}
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+button:focus-visible{
+    outline: .3rem solid var(--acento);
+    outline-offset: .3rem;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.contenedor{
+    width: min(100% - 3rem, 120rem);
+    margin-inline: auto;
+}
+h1, h2, h3{
+    text-align: center;
+    color: var(--acento);
+    font-family:  var(--fuentePrincipal);
+}
+
+h1{
+    font-size:4rem ;
+}
+h2{
+    font-size: 3.2rem;
+}
+h3{
+    font-size: 2.4rem;
+}
+/*header*/
+
+.header{
+    display: flex;
+    justify-content: center;
+}
+.header__logo{
+    max-width: 20rem;
+    height: auto;
+    margin: 3rem;
+}
+/* footer*/
+.footer{
+    background-color: var(--fondo-superficie);
+    padding: 1rem 0;
+    margin-top:2rem;
+
+}
+.footer__texto{
+    font-family: var(--fuentePrincipal);
+    text-align: center;
+    font-size: 2rem;
+
+}
+
+/* navegacion*/
+
+.navegacion{
+    background-color: var(--fondo-superficie);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.navegacion__grupo,
+.navegacion__acciones{
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
+.navegacion__enlace{
+    font-family: var(--fuentePrincipal);
+    color: var(--texto-principal);
+    font-size: 3rem;
+    padding: 1rem 1.5rem;
+    border-radius: .4rem;
+}
+.navegacion__enlace--activo,
+.navegacion__enlace:hover{
+    color: var(--acento);
+}
+
+/* Grid */
+
+.grid{
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .grid{
+            grid-template-columns:repeat(3, 1fr);
+
+    }
+}
+
+
+/* Productos */
+
+.producto{
+    background-color: var(--fondo-superficie);
+    padding: 1rem;
+
+}
+
+.producto__imagen{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.producto__nombre{
+    font-size: 4rem;
+
+}
+.producto__precio{
+    font-size: 2.8rem;
+    color: var(--acento);
+
+}
+.producto__nombre,
+.producto__precio{
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/*graficos*/
+
+.grafico{
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    grid-column: 1 / -1;
+}
+.grafico__camisa{
+    background-image: url(../img/grafico1.jpg);
+}
+.grafico__node{
+    background-image: url(../img/grafico2.jpg);
+}
+
+
+/* nosotros */
+.nosotros{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    row-gap: 1.5rem;
+
+}
+
+@media (min-width: 768px) {
+    .nosotros{
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+
+}
+}
+
+.nosotros__imagen{
+    grid-row: 1 / 2;
+}
+@media (min-width: 768px) {
+    .nosotros__imagen{
+        grid-column: 2 / 3;
+    }
+}
+
+/* bloques*/
+
+.bloques{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .bloques{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        
+    }
+}
+
+.bloque{
+    text-align: center;
+
+}
+.bloque__imagen{
+    margin-inline: auto;
+}
+.bloque__titulo{
+    margin: 0;
+}
+
+
+/* pagina de camisa*/
+
+
+@media (min-width: 768px) {
+    .camisa {
+        display: grid;
+        grid-template-columns:  repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+.formulario{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+}
+.formulario__campo{
+    border-color: var(--fondo-superficie);
+    background-color: transparent;
+    border-width: 1rem;
+    border-style: solid;
+    color: var(--texto-principal);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    appearance: none;
+}
+
+.formulario__campo:focus{
+    color: var(--texto-oscuro);
+    background-color: var(--fondo-contraste);
+    outline: .3rem solid var(--acento);
+    outline-offset: .2rem;
+}
+
+.formulario__campo option{
+    color: var(--texto-oscuro);
+}
+
+.formulario__submit{
+    background-color: var(--acento);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--fuentePrincipal);
+    padding: 2rem;
+    transition: background-color .3s ease;
+    grid-column: 1 /3;
+}
+.formulario__submit:hover{
+    cursor: pointer;
+    background-color: var(--acento-hover);
+}
+
+.camisa__imagen{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.camisa__precio{
+    font-family: var(--fuentePrincipal);
+    font-size: 3rem;
+    color: var(--acento);
+}
+
+.formulario__label{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* producto no encontrado */
+.producto-no-encontrado{
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.producto-no-encontrado__enlace{
+    display: inline-block;
+    background-color: var(--acento);
+    color: var(--texto-sobre-acento);
+    font-family: var(--fuentePrincipal);
+    font-size: 2rem;
+    padding: 1rem 3rem;
+    transition: background-color .3s ease;
+}
+
+.producto-no-encontrado__enlace:hover{
+    background-color: var(--acento-hover);
+}
+
+/* moviles */
+@media (max-width: 480px) {
+    h1{
+        font-size: 3.2rem;
+    }
+    h2{
+        font-size: 2.6rem;
+    }
+    h3{
+        font-size: 2rem;
+    }
+
+    .navegacion__enlace{
+        font-size: 2.6rem;
+    }
+
+    .producto__nombre{
+        font-size: clamp(2rem, 6vw, 2.8rem);
+    }
+    .producto__precio{
+        font-size: 2.2rem;
+    }
+
+    .grafico{
+        min-height: 18rem;
+    }
+
+    .bloque__imagen{
+        max-width: 8rem;
+        margin-inline: auto;
+        justify-content: center;
+    }
+
+    .nosotros__imagen{
+        grid-row: auto;
+    }
+
+    .formulario{
+        grid-template-columns: 1fr;
+    }
+    .formulario__campo{
+        width: 100%;
+        border-width: .5rem;
+        appearance: auto;
+    }
+    .formulario__submit{
+        grid-column: 1;
+        font-size: 1.8rem;
+        padding: 1.5rem;
+    }
+
+    .footer__texto{
+        font-size: 1.8rem;
+    }
+}
