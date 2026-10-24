@@ -7,10 +7,12 @@
 
     let editingId = null;
     let dialog = null;
+    let deleteDialog = null;
     let form = null;
     let paginaActual = 1;
     let currentImage = "";
     let previewObjectUrl = null;
+    let pendingDeleteId = null;
 
     function text(tag, className, value) {
         const element = document.createElement(tag);
@@ -193,6 +195,32 @@
         dialog.showModal();
     }
 
+    function openDeleteDialog(product) {
+        if (!deleteDialog) return;
+        pendingDeleteId = product.id;
+        deleteDialog.showModal();
+    }
+
+    async function confirmDelete() {
+        if (!pendingDeleteId) return;
+
+        const id = pendingDeleteId;
+        const confirmButton = document.getElementById("confirmar-eliminar");
+        pendingDeleteId = null;
+        deleteDialog.close();
+
+        if (confirmButton) confirmButton.disabled = true;
+        try {
+            await API.deleteProduct(id);
+            UI.toast("Producto eliminado.");
+            await loadProducts();
+        } catch (error) {
+            UI.toast(error.message, { type: "error", duration: 6000 });
+        } finally {
+            if (confirmButton) confirmButton.disabled = false;
+        }
+    }
+
     async function saveProduct(event) {
         event.preventDefault();
         const errorBox = document.getElementById("producto-error");
@@ -270,16 +298,7 @@
         }
 
         if (button.dataset.accion === "eliminar") {
-            if (!window.confirm("\u00bfEliminar el producto \"" + product.nombre + "\"? Esta accion no se puede deshacer.")) {
-                return;
-            }
-            try {
-                await API.deleteProduct(id);
-                UI.toast("Producto eliminado.");
-                await loadProducts();
-            } catch (error) {
-                UI.toast(error.message, { type: "error", duration: 6000 });
-            }
+            openDeleteDialog(product);
         }
     }
 
@@ -295,14 +314,23 @@
         if (!Auth.isAuthenticated()) return;
 
         dialog = document.getElementById("producto-dialog");
+        deleteDialog = document.getElementById("eliminar-dialog");
         form = document.getElementById("producto-form");
-        if (!dialog || !form) return;
+        if (!dialog || !form || !deleteDialog) return;
 
         document.getElementById("nuevo-producto").addEventListener("click", () => openForm(null));
         form.addEventListener("submit", saveProduct);
         document.getElementById("cancelar-producto").addEventListener("click", () => dialog.close());
         document.getElementById("imagen-archivo").addEventListener("change", handleFileChange);
         dialog.addEventListener("close", () => setImagePreview("img/logo.png"));
+        document.getElementById("confirmar-eliminar").addEventListener("click", confirmDelete);
+        document.getElementById("cancelar-eliminar").addEventListener("click", () => {
+            pendingDeleteId = null;
+            deleteDialog.close();
+        });
+        deleteDialog.addEventListener("close", () => {
+            pendingDeleteId = null;
+        });
         document.getElementById("admin-lista").addEventListener("click", handleListClick);
         document.getElementById("admin-productos-paginacion").addEventListener("click", handlePagination);
 

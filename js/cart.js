@@ -138,7 +138,7 @@
         if (summary) {
             const cliente = result.cliente || {};
             summary.textContent =
-                "Pedido #" + order.id + " \u00b7 " + (cliente.nombre_completo || "") +
+                (cliente.nombre_completo || "") +
                 " \u00b7 " + (result.compras_realizadas || 0) + " compras realizadas \u00b7 " +
                 (result.tipo_cliente || "") + " \u00b7 " + Store.formatPrice(order.total);
         }
